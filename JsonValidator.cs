@@ -9,11 +9,11 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace JsonApp
+namespace JsonValidator
 {
-    public partial class JsonApp : Form
+    public partial class JsonValidator : Form
     {
-        public JsonApp()
+        public JsonValidator()
         {
             InitializeComponent();
             toolTip1.SetToolTip(openFileButton, "Open a JSON file (Ctrl + O)");

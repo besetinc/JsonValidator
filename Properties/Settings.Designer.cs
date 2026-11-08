@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JsonApp.Properties
+namespace JsonValidator.Properties
 {
 
 

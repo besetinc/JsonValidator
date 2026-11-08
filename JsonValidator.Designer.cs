@@ -1,6 +1,6 @@
-﻿namespace JsonApp
+﻿namespace JsonValidator
 {
-    partial class JsonApp
+    partial class JsonValidator
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JsonValidator));
             groupBox1 = new System.Windows.Forms.GroupBox();
             inputJson = new System.Windows.Forms.TextBox();
             validateButton = new System.Windows.Forms.Button();
@@ -73,23 +74,27 @@
             // 
             // validateButton
             // 
-            validateButton.Location = new System.Drawing.Point(373, 12);
+            validateButton.Image = (System.Drawing.Image)resources.GetObject("validateButton.Image");
+            validateButton.Location = new System.Drawing.Point(398, 12);
             validateButton.Margin = new System.Windows.Forms.Padding(2);
             validateButton.Name = "validateButton";
             validateButton.Size = new System.Drawing.Size(115, 30);
             validateButton.TabIndex = 1;
             validateButton.Text = "Validate";
+            validateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             validateButton.UseVisualStyleBackColor = true;
             validateButton.Click += ValidateButton_Click;
             // 
             // resetButton
             // 
-            resetButton.Location = new System.Drawing.Point(734, 12);
+            resetButton.Image = (System.Drawing.Image)resources.GetObject("resetButton.Image");
+            resetButton.Location = new System.Drawing.Point(756, 12);
             resetButton.Margin = new System.Windows.Forms.Padding(2);
             resetButton.Name = "resetButton";
             resetButton.Size = new System.Drawing.Size(115, 30);
             resetButton.TabIndex = 2;
             resetButton.Text = "Reset";
+            resetButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             resetButton.UseVisualStyleBackColor = true;
             resetButton.Click += ResetButton_Click;
             // 
@@ -118,6 +123,7 @@
             // 
             // openFileButton
             // 
+            openFileButton.Image = (System.Drawing.Image)resources.GetObject("openFileButton.Image");
             openFileButton.Location = new System.Drawing.Point(12, 12);
             openFileButton.Margin = new System.Windows.Forms.Padding(2);
             openFileButton.Name = "openFileButton";
@@ -125,6 +131,7 @@
             openFileButton.Size = new System.Drawing.Size(115, 30);
             openFileButton.TabIndex = 4;
             openFileButton.Text = "Open file...";
+            openFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             openFileButton.UseVisualStyleBackColor = true;
             openFileButton.Click += OpenFileButton_Click;
             // 
@@ -147,45 +154,53 @@
             // 
             // loadSchemaButton
             // 
+            loadSchemaButton.Image = (System.Drawing.Image)resources.GetObject("loadSchemaButton.Image");
             loadSchemaButton.Location = new System.Drawing.Point(253, 12);
             loadSchemaButton.Name = "loadSchemaButton";
-            loadSchemaButton.Size = new System.Drawing.Size(115, 30);
+            loadSchemaButton.Size = new System.Drawing.Size(140, 30);
             loadSchemaButton.TabIndex = 7;
             loadSchemaButton.Text = "Load schema...";
+            loadSchemaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             loadSchemaButton.UseVisualStyleBackColor = true;
             loadSchemaButton.Click += loadSchemaButton_Click;
             // 
             // saveFileButton
             // 
+            saveFileButton.Image = (System.Drawing.Image)resources.GetObject("saveFileButton.Image");
             saveFileButton.Location = new System.Drawing.Point(132, 12);
             saveFileButton.Name = "saveFileButton";
             saveFileButton.Size = new System.Drawing.Size(115, 30);
             saveFileButton.TabIndex = 8;
             saveFileButton.Text = "Save file...";
+            saveFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             saveFileButton.UseVisualStyleBackColor = true;
             saveFileButton.Click += saveFileButton_Click;
             // 
             // formatJsonButton
             // 
-            formatJsonButton.Location = new System.Drawing.Point(493, 12);
+            formatJsonButton.Image = (System.Drawing.Image)resources.GetObject("formatJsonButton.Image");
+            formatJsonButton.Location = new System.Drawing.Point(515, 12);
             formatJsonButton.Name = "formatJsonButton";
             formatJsonButton.Size = new System.Drawing.Size(115, 30);
             formatJsonButton.TabIndex = 9;
             formatJsonButton.Text = "Format";
+            formatJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             formatJsonButton.UseVisualStyleBackColor = true;
             formatJsonButton.Click += formatJsonButton_Click;
             // 
             // minifyJsonButton
             // 
-            minifyJsonButton.Location = new System.Drawing.Point(614, 12);
+            minifyJsonButton.Image = (System.Drawing.Image)resources.GetObject("minifyJsonButton.Image");
+            minifyJsonButton.Location = new System.Drawing.Point(636, 12);
             minifyJsonButton.Name = "minifyJsonButton";
             minifyJsonButton.Size = new System.Drawing.Size(115, 30);
             minifyJsonButton.TabIndex = 10;
             minifyJsonButton.Text = "Minify";
+            minifyJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             minifyJsonButton.UseVisualStyleBackColor = true;
             minifyJsonButton.Click += minifyJsonButton_Click;
             // 
-            // JsonApp
+            // JsonValidator
             // 
             AllowDrop = true;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -201,10 +216,11 @@
             Controls.Add(resetButton);
             Controls.Add(validateButton);
             Controls.Add(groupBox1);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Margin = new System.Windows.Forms.Padding(2);
             MinimumSize = new System.Drawing.Size(900, 650);
-            Name = "JsonApp";
+            Name = "JsonValidator";
             Text = "JSON Validator";
             KeyDown += JsonApp_KeyDown;
             groupBox1.ResumeLayout(false);

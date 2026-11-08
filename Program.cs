@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JsonApp
+namespace JsonValidator
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace JsonApp
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new JsonApp());
+            Application.Run(new JsonValidator());
         }
     }
 }
