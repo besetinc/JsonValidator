@@ -63,6 +63,7 @@
             // 
             // inputJson
             // 
+            inputJson.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             inputJson.Location = new System.Drawing.Point(12, 25);
             inputJson.Margin = new System.Windows.Forms.Padding(2);
             inputJson.Multiline = true;
@@ -112,6 +113,7 @@
             // 
             // output
             // 
+            output.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             output.Location = new System.Drawing.Point(12, 25);
             output.Margin = new System.Windows.Forms.Padding(2);
             output.Multiline = true;
@@ -137,6 +139,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             groupBox3.Controls.Add(jsonTreeView);
             groupBox3.Location = new System.Drawing.Point(445, 55);
             groupBox3.Name = "groupBox3";
@@ -147,6 +150,7 @@
             // 
             // jsonTreeView
             // 
+            jsonTreeView.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             jsonTreeView.Location = new System.Drawing.Point(12, 25);
             jsonTreeView.Name = "jsonTreeView";
             jsonTreeView.Size = new System.Drawing.Size(401, 490);
