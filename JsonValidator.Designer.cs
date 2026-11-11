@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JsonValidator));
             groupBox1 = new System.Windows.Forms.GroupBox();
             inputJson = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@
             saveFileButton = new System.Windows.Forms.Button();
             formatJsonButton = new System.Windows.Forms.Button();
             minifyJsonButton = new System.Windows.Forms.Button();
-            toolTip1 = new System.Windows.Forms.ToolTip(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -228,7 +226,6 @@
             MinimumSize = new System.Drawing.Size(900, 650);
             Name = "JsonValidator";
             Text = "JSON Validator";
-            KeyDown += JsonApp_KeyDown;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -253,7 +250,6 @@
         private System.Windows.Forms.Button saveFileButton;
         private System.Windows.Forms.Button formatJsonButton;
         private System.Windows.Forms.Button minifyJsonButton;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

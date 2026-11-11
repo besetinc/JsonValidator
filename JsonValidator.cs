@@ -16,13 +16,6 @@ namespace JsonValidator
         public JsonValidator()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(openFileButton, "Open a JSON file (Ctrl + O)");
-            toolTip1.SetToolTip(saveFileButton, "Save JSON to a file (Ctrl + S)");
-            toolTip1.SetToolTip(validateButton, "Validate JSON (Ctrl + Shift + V)");
-            toolTip1.SetToolTip(resetButton, "Reset application (Ctrl + Shift + R)");
-            toolTip1.SetToolTip(loadSchemaButton, "Load JSON schema (Ctrl + L)");
-            toolTip1.SetToolTip(formatJsonButton, "Format JSON (Ctrl + Shift + F)");
-            toolTip1.SetToolTip(minifyJsonButton, "Minify JSON (Ctrl + Shift + M)");
         }
         private JSchema? loadedSchema;
         private void OpenFileButton_Click(object sender, EventArgs e)
@@ -31,18 +24,18 @@ namespace JsonValidator
         }
         private void OpenJsonFile()
         {
-            OpenFileDialog ofd = new OpenFileDialog
+            using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*"
-            };
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                var sr = new StreamReader(ofd.FileName);
-                var myJson = sr.ReadToEnd();
-                inputJson.Text = myJson;
+                ofd.Title = "Open JSON File";
+                ofd.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
 
-                output.Clear();
-                jsonTreeView.Nodes.Clear();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    inputJson.Text = File.ReadAllText(ofd.FileName);
+
+                    output.Clear();
+                    jsonTreeView.Nodes.Clear();
+                }
             }
         }
         private void ShowMessage(string outputStr)
@@ -67,7 +60,7 @@ namespace JsonValidator
         }
         private void ValidateButton_Click(object sender, EventArgs e)
         {
-            if (inputJson.Text != "")
+            if (!string.IsNullOrWhiteSpace(inputJson.Text))
             {
                 ValidateJson(inputJson.Text);
             }
@@ -159,7 +152,7 @@ namespace JsonValidator
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
                 dialog.Title = "Select JSON Schema";
-                dialog.Filter = "All files (*.*)|*.*|JSON files (*.json)|*.json";
+                dialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
@@ -210,6 +203,12 @@ namespace JsonValidator
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(inputJson.Text))
+                {
+                    ShowMessage("Please enter or load JSON data first.");
+                    return;
+                }
+
                 inputJson.Text = JsonHandler.Format(inputJson.Text);
                 ShowMessage("JSON formatted successfully.");
             }
@@ -223,6 +222,12 @@ namespace JsonValidator
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(inputJson.Text))
+                {
+                    ShowMessage("Please enter or load JSON data first.");
+                    return;
+                }
+
                 inputJson.Text = JsonHandler.Minify(inputJson.Text);
                 ShowMessage("JSON minified successfully.");
             }
@@ -232,44 +237,5 @@ namespace JsonValidator
                 ShowMessage(ex.Message);
             }
         }
-        private void JsonApp_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.O)
-            {
-                openFileButton.PerformClick();
-            }
-            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.S)
-            {
-                saveFileButton.PerformClick();
-            }
-            else if (e.Control && e.Shift && e.KeyCode == Keys.V)
-            {
-                validateButton.PerformClick();
-            }
-            else if (e.Modifiers == (Keys.Control | Keys.Shift) && e.KeyCode == Keys.R)
-            {
-                resetButton.PerformClick();
-            }
-            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.L)
-            {
-                loadSchemaButton.PerformClick();
-            }
-            else if (e.Modifiers == (Keys.Control | Keys.Shift) && e.KeyCode == Keys.F)
-            {
-                formatJsonButton.PerformClick();
-            }
-            else if (e.Modifiers == (Keys.Control | Keys.Shift) && e.KeyCode == Keys.M)
-            {
-                minifyJsonButton.PerformClick();
-            }
-            else
-            {
-                return;
-            }
-
-            e.SuppressKeyPress = true;
-            e.Handled = true;
-        }
     }
 }
-
