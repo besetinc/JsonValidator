@@ -33,7 +33,7 @@ namespace JsonValidator
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
-                Filter = "All files (*.*)|*.*|JSON files (*.json)|*.json"
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -84,8 +84,7 @@ namespace JsonValidator
             try
             {
                 // Check JSON syntax
-                JToken jsonToken = JToken.Parse(inputJson);
-
+                JToken jsonToken = JsonHandler.Validate(inputJson);
                 ShowMessage("JSON syntax is valid.");
 
                 // Build JSON hierarchy
@@ -99,7 +98,7 @@ namespace JsonValidator
                 {
                     IList<string> validationErrors;
 
-                    bool isValid = jsonToken.IsValid(loadedSchema, out validationErrors);
+                    bool isValid = JsonHandler.ValidateSchema(jsonToken, loadedSchema, out validationErrors);
 
                     if (isValid)
                     {
@@ -168,8 +167,7 @@ namespace JsonValidator
                     {
                         string schemaJson = File.ReadAllText(dialog.FileName);
 
-                        JSchema schema = JSchema.Parse(schemaJson);
-                        loadedSchema = schema;
+                        loadedSchema = JsonHandler.ParseSchema(schemaJson);
 
                         ShowMessage("Schema loaded successfully: " +
                                     Path.GetFileName(dialog.FileName));
@@ -212,10 +210,7 @@ namespace JsonValidator
         {
             try
             {
-                JToken jsonToken = JToken.Parse(inputJson.Text);
-
-                inputJson.Text = jsonToken.ToString(Formatting.Indented);
-
+                inputJson.Text = JsonHandler.Format(inputJson.Text);
                 ShowMessage("JSON formatted successfully.");
             }
             catch (JsonReaderException ex)
@@ -224,15 +219,11 @@ namespace JsonValidator
                 ShowMessage(ex.Message);
             }
         }
-
         private void minifyJsonButton_Click(object sender, EventArgs e)
         {
             try
             {
-                JToken jsonToken = JToken.Parse(inputJson.Text);
-
-                inputJson.Text = jsonToken.ToString(Formatting.None);
-
+                inputJson.Text = JsonHandler.Minify(inputJson.Text);
                 ShowMessage("JSON minified successfully.");
             }
             catch (JsonReaderException ex)

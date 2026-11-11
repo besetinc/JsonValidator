@@ -51,6 +51,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             groupBox1.Controls.Add(inputJson);
             groupBox1.Location = new System.Drawing.Point(12, 55);
             groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -59,7 +60,7 @@
             groupBox1.Size = new System.Drawing.Size(420, 270);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "JSON INPUT";
+            groupBox1.Text = "Json &input";
             // 
             // inputJson
             // 
@@ -80,8 +81,8 @@
             validateButton.Margin = new System.Windows.Forms.Padding(2);
             validateButton.Name = "validateButton";
             validateButton.Size = new System.Drawing.Size(115, 30);
-            validateButton.TabIndex = 1;
-            validateButton.Text = "Validate";
+            validateButton.TabIndex = 4;
+            validateButton.Text = "&Validate";
             validateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             validateButton.UseVisualStyleBackColor = true;
             validateButton.Click += ValidateButton_Click;
@@ -93,23 +94,24 @@
             resetButton.Margin = new System.Windows.Forms.Padding(2);
             resetButton.Name = "resetButton";
             resetButton.Size = new System.Drawing.Size(115, 30);
-            resetButton.TabIndex = 2;
-            resetButton.Text = "Reset";
+            resetButton.TabIndex = 7;
+            resetButton.Text = "&Reset";
             resetButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             resetButton.UseVisualStyleBackColor = true;
             resetButton.Click += ResetButton_Click;
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             groupBox2.Controls.Add(output);
             groupBox2.Location = new System.Drawing.Point(12, 335);
             groupBox2.Margin = new System.Windows.Forms.Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(2);
             groupBox2.Size = new System.Drawing.Size(420, 250);
-            groupBox2.TabIndex = 3;
+            groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
-            groupBox2.Text = "MESSAGES / LOGS";
+            groupBox2.Text = "Messages / &Logs";
             // 
             // output
             // 
@@ -131,8 +133,8 @@
             openFileButton.Name = "openFileButton";
             openFileButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             openFileButton.Size = new System.Drawing.Size(115, 30);
-            openFileButton.TabIndex = 4;
-            openFileButton.Text = "Open file...";
+            openFileButton.TabIndex = 1;
+            openFileButton.Text = "&Open file...";
             openFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             openFileButton.UseVisualStyleBackColor = true;
             openFileButton.Click += OpenFileButton_Click;
@@ -144,9 +146,9 @@
             groupBox3.Location = new System.Drawing.Point(445, 55);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new System.Drawing.Size(425, 530);
-            groupBox3.TabIndex = 6;
+            groupBox3.TabIndex = 9;
             groupBox3.TabStop = false;
-            groupBox3.Text = "JSON HIERARCHY TREE";
+            groupBox3.Text = "Json &Hierarchy Tree";
             // 
             // jsonTreeView
             // 
@@ -162,8 +164,8 @@
             loadSchemaButton.Location = new System.Drawing.Point(253, 12);
             loadSchemaButton.Name = "loadSchemaButton";
             loadSchemaButton.Size = new System.Drawing.Size(140, 30);
-            loadSchemaButton.TabIndex = 7;
-            loadSchemaButton.Text = "Load schema...";
+            loadSchemaButton.TabIndex = 3;
+            loadSchemaButton.Text = "&Load schema...";
             loadSchemaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             loadSchemaButton.UseVisualStyleBackColor = true;
             loadSchemaButton.Click += loadSchemaButton_Click;
@@ -174,8 +176,8 @@
             saveFileButton.Location = new System.Drawing.Point(132, 12);
             saveFileButton.Name = "saveFileButton";
             saveFileButton.Size = new System.Drawing.Size(115, 30);
-            saveFileButton.TabIndex = 8;
-            saveFileButton.Text = "Save file...";
+            saveFileButton.TabIndex = 2;
+            saveFileButton.Text = "&Save file...";
             saveFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             saveFileButton.UseVisualStyleBackColor = true;
             saveFileButton.Click += saveFileButton_Click;
@@ -186,8 +188,8 @@
             formatJsonButton.Location = new System.Drawing.Point(515, 12);
             formatJsonButton.Name = "formatJsonButton";
             formatJsonButton.Size = new System.Drawing.Size(115, 30);
-            formatJsonButton.TabIndex = 9;
-            formatJsonButton.Text = "Format";
+            formatJsonButton.TabIndex = 5;
+            formatJsonButton.Text = "&Format";
             formatJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             formatJsonButton.UseVisualStyleBackColor = true;
             formatJsonButton.Click += formatJsonButton_Click;
@@ -198,8 +200,8 @@
             minifyJsonButton.Location = new System.Drawing.Point(636, 12);
             minifyJsonButton.Name = "minifyJsonButton";
             minifyJsonButton.Size = new System.Drawing.Size(115, 30);
-            minifyJsonButton.TabIndex = 10;
-            minifyJsonButton.Text = "Minify";
+            minifyJsonButton.TabIndex = 6;
+            minifyJsonButton.Text = "&Minify";
             minifyJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             minifyJsonButton.UseVisualStyleBackColor = true;
             minifyJsonButton.Click += minifyJsonButton_Click;
