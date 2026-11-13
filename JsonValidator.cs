@@ -18,11 +18,8 @@ namespace JsonValidator
             InitializeComponent();
         }
         private JSchema? loadedSchema;
+
         private void OpenFileButton_Click(object sender, EventArgs e)
-        {
-            OpenJsonFile();
-        }
-        private void OpenJsonFile()
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -31,10 +28,17 @@ namespace JsonValidator
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    inputJson.Text = File.ReadAllText(ofd.FileName);
+                    try
+                    {
+                        inputJson.Text = File.ReadAllText(ofd.FileName);
 
-                    output.Clear();
-                    jsonTreeView.Nodes.Clear();
+                        output.Clear();
+                        jsonTreeView.Nodes.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowMessage("Failed to open file: " + ex.Message);
+                    }
                 }
             }
         }
@@ -147,7 +151,7 @@ namespace JsonValidator
                 parentNode.Text += ": " + token.ToString(Formatting.None);
             }
         }
-        private void loadSchemaButton_Click(object sender, EventArgs e)
+        private void LoadSchemaButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
@@ -172,7 +176,7 @@ namespace JsonValidator
                 }
             }
         }
-        private void saveFileButton_Click(object sender, EventArgs e)
+        private void SaveFileButton_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog dialog = new SaveFileDialog())
             {
@@ -199,7 +203,7 @@ namespace JsonValidator
                 }
             }
         }
-        private void formatJsonButton_Click(object sender, EventArgs e)
+        private void FormatJsonButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -218,7 +222,7 @@ namespace JsonValidator
                 ShowMessage(ex.Message);
             }
         }
-        private void minifyJsonButton_Click(object sender, EventArgs e)
+        private void MinifyJsonButton_Click(object sender, EventArgs e)
         {
             try
             {

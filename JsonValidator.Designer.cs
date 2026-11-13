@@ -166,7 +166,7 @@
             loadSchemaButton.Text = "&Load schema...";
             loadSchemaButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             loadSchemaButton.UseVisualStyleBackColor = true;
-            loadSchemaButton.Click += loadSchemaButton_Click;
+            loadSchemaButton.Click += LoadSchemaButton_Click;
             // 
             // saveFileButton
             // 
@@ -178,7 +178,7 @@
             saveFileButton.Text = "&Save file...";
             saveFileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             saveFileButton.UseVisualStyleBackColor = true;
-            saveFileButton.Click += saveFileButton_Click;
+            saveFileButton.Click += SaveFileButton_Click;
             // 
             // formatJsonButton
             // 
@@ -190,7 +190,7 @@
             formatJsonButton.Text = "&Format";
             formatJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             formatJsonButton.UseVisualStyleBackColor = true;
-            formatJsonButton.Click += formatJsonButton_Click;
+            formatJsonButton.Click += FormatJsonButton_Click;
             // 
             // minifyJsonButton
             // 
@@ -202,7 +202,7 @@
             minifyJsonButton.Text = "&Minify";
             minifyJsonButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             minifyJsonButton.UseVisualStyleBackColor = true;
-            minifyJsonButton.Click += minifyJsonButton_Click;
+            minifyJsonButton.Click += MinifyJsonButton_Click;
             // 
             // JsonValidator
             // 
